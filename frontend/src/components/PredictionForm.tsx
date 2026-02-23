@@ -4,7 +4,7 @@ import axios from "axios";
 import { Loader2, Calculator, MapPin, Home, Bath, ArrowUp, Calendar, Info } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-const API_BASE = "http://localhost:8000/api/v1";
+import { API_URL } from "@/lib/api";
 
 export function PredictionForm() {
     const [locations, setLocations] = useState<string[]>([]);
@@ -23,7 +23,7 @@ export function PredictionForm() {
     });
 
     useEffect(() => {
-        axios.get(`${API_BASE}/locations`)
+        axios.get(`${API_URL}/locations`)
             .then(res => setLocations(res.data))
             .catch(err => console.error("Error fetching locations", err));
     }, []);
@@ -33,7 +33,7 @@ export function PredictionForm() {
         setLoading(true);
         setResult(null);
         try {
-            const response = await axios.post(`${API_BASE}/predict`, {
+            const response = await axios.post(`${API_URL}/predict`, {
                 ...formData,
                 area_sqft: parseFloat(formData.area_sqft),
                 bhk: parseInt(formData.bhk),
