@@ -20,7 +20,7 @@ A production-ready ML web application to predict property valuations in Navi Mum
 2. `pip install -r requirements.txt`
 3. `python scripts/clean_data.py`
 4. `python scripts/train_model.py`
-5. `uvicorn main:app --reload`
+5. `uvicorn app.main:app --reload`
 
 ### Frontend
 1. `cd frontend`
