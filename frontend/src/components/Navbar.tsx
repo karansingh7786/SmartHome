@@ -21,6 +21,12 @@ export function Navbar() {
 
                 <div className="flex items-center gap-4">
                     <a
+                        href="/dashboard"
+                        className="hidden sm:flex items-center gap-2 bg-blue-600/10 text-blue-400 px-4 py-2 rounded-full text-sm font-bold border border-blue-500/20 hover:bg-blue-600 hover:text-white transition-all"
+                    >
+                        Launch Dashboard
+                    </a>
+                    <a
                         href="https://github.com"
                         target="_blank"
                         className="p-2 rounded-full hover:bg-white/5 transition-colors text-slate-400 hover:text-white"

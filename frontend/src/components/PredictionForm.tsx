@@ -6,10 +6,15 @@ import { cn } from "@/lib/utils";
 
 import { API_URL } from "@/lib/api";
 
+interface PredictionResult {
+    formatted_price: string;
+    price_per_sqft: string;
+}
+
 export function PredictionForm() {
     const [locations, setLocations] = useState<string[]>([]);
     const [loading, setLoading] = useState(false);
-    const [result, setResult] = useState<any>(null);
+    const [result, setResult] = useState<PredictionResult | null>(null);
     const [formData, setFormData] = useState({
         location: "",
         area_sqft: "",
